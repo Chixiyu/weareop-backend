@@ -1,7 +1,7 @@
 package com.weareop.weareopbackend.entity;
 
 public class Video {
-    private Long id;
+    private Long videoId;
     private String cover;
     private String video;
     private String name;
@@ -9,16 +9,17 @@ public class Video {
     private Long likeCount;
     private Long coinCount;
     private Long collectCount;
+    private Long upId;
     private String upName;
     private String upTagColor;
     private String upTagText;
 
-    public Long getId() {
-        return id;
+    public Long getVideoId() {
+        return videoId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setVideoId(Long videoId) {
+        this.videoId = videoId;
     }
 
     public String getCover() {
@@ -75,6 +76,14 @@ public class Video {
 
     public void setCollectCount(Long collectCount) {
         this.collectCount = collectCount;
+    }
+
+    public Long getUpId() {
+        return upId;
+    }
+
+    public void setUpId(Long upId) {
+        this.upId = upId;
     }
 
     public String getUpName() {

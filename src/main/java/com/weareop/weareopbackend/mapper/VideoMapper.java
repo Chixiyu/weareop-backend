@@ -12,6 +12,6 @@ import java.util.List;
 @Repository
 public interface VideoMapper {
 
-    @Select("select * from video")
+    @Select("select video.id as videoId,cover,video,name,view_count,like_count,coin_count,collect_count,up.id as upId, up_name,up_tag_color,up_tag_text from video join up on video.up_id=up.id;")
     public List<Video> getVideoList();
 }
