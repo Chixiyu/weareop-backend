@@ -26,4 +26,9 @@ public class LoginController {
         loginService.logOut(token);
     }
 
+    @PostMapping("/tokenlogin")
+    public String loginByToken(String token){
+        return loginService.loginByToken(token);
+    }
+
 }

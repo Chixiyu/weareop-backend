@@ -32,7 +32,7 @@ public class LoginService {
         else if(up.getPassword().equals(password)){
             String newToken= UUID.randomUUID().toString();
             up.setToken(newToken);
-            redisTemplate.opsForValue().set(newToken, JSONObject.toJSONString(up),60, TimeUnit.SECONDS);
+            redisTemplate.opsForValue().set(newToken, JSONObject.toJSONString(up),60, TimeUnit.MINUTES);
             LOG.info("Added new token: {}",newToken);
             return up;
         }
@@ -50,5 +50,14 @@ public class LoginService {
             e.printStackTrace();
             LOG.error("Delete token failed:{}",token);
         }
+    }
+    
+    public String loginByToken(String token){
+        if(token==null||token.isEmpty()){
+            LOG.info("Token is null");
+            return "Token is null";
+        }
+        String up=redisTemplate.opsForValue().get(token);
+        return up;
     }
 }
