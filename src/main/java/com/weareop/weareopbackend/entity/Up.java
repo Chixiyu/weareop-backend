@@ -12,6 +12,8 @@ public class Up {
     private Long totalCollectCount;
     private String password;
     private String token;
+    private String description;
+    private String avatar;
 
     public Long getId() {
         return id;
@@ -93,11 +95,28 @@ public class Up {
         this.password = password;
     }
 
+
     public String getToken() {
         return token;
     }
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 }

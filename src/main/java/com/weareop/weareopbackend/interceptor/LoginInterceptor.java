@@ -20,11 +20,12 @@ public class LoginInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        LOG.info("mvc Interceptor: {}", request.getHeader("token"));
         if (request.getMethod().equalsIgnoreCase("OPTIONS")) {
             LOG.info("Returned OPTIONS");
             return true;
         }
+
+        LOG.info("mvc Interceptor: {}", request.getHeader("token"));
         String path = request.getRequestURL().toString();
         LOG.info("Login interface intercepted, path: {}", path);
 
