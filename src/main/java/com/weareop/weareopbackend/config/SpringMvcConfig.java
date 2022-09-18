@@ -9,17 +9,13 @@ import javax.annotation.Resource;
 
 @Configuration
 public class SpringMvcConfig implements WebMvcConfigurer {
-    @Resource
-    private LoginInterceptor loginInterceptor;
-
-//     add login interceptor (check login for backstage)
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(loginInterceptor)
-                .addPathPatterns("/**")
-                .excludePathPatterns("/login")
-                .excludePathPatterns("/tokenlogin")
-                .excludePathPatterns("/logout")
-                .excludePathPatterns("/redis/**");
-    }
+//    @Resource
+//    private LoginInterceptor loginInterceptor;
+//
+////     add login interceptor (check login for backstage)
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(loginInterceptor)
+//                .addPathPatterns("/");
+//    }
 }

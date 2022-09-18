@@ -20,4 +20,9 @@ public class VideoController {
         List<Video> videos=videoService.getVideoList();
         return videos;
     }
+
+    @GetMapping("/oneVideo")
+    public Video getVideoById(String videoId){
+        return videoService.getVideoById(videoId);
+    }
 }
